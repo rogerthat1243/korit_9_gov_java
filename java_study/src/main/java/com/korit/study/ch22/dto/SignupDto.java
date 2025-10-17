@@ -1,7 +1,7 @@
-package main.java.com.korit.study.ch22.dto;
+package com.korit.study.ch22.dto;
 
-import main.java.com.korit.study.ch22.entity.User;
-import main.java.com.korit.study.ch22.util.PasswordEncoder;
+import com.korit.study.ch22.entity.User;
+import com.korit.study.ch22.util.PasswordEncoder;
 
 public class SignupDto {
     private String username;
@@ -33,6 +33,6 @@ public class SignupDto {
     }
 
     public User toUser() {
-        return new User(0, username, PasswordEncoder.encode((password)));
+        return new User(0, username, PasswordEncoder.encode(password));
     }
 }

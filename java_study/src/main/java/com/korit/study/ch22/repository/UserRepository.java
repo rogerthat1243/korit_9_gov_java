@@ -1,6 +1,6 @@
-package main.java.com.korit.study.ch22.repository;
+package com.korit.study.ch22.repository;
 
-import main.java.com.korit.study.ch22.entity.User;
+import com.korit.study.ch22.entity.User;
 
 import java.util.Arrays;
 import java.util.Objects;
@@ -38,21 +38,21 @@ public class UserRepository {
         return null;
     }
 
-    private int generateId() { // 위에 user.setId가 대체해줌
+    private int generateId() {
         return users[users.length].getId() + 1;
     }
 
     @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("[");
+        stringBuilder.append("User 배열: [ ");
         for (int i = 0; i < users.length; i++) {
             stringBuilder.append(users[i]);
-            if (i != users.length + 1) {
+            if (i != users.length - 1) {
                 stringBuilder.append(", ");
             }
         }
-        stringBuilder.append("]");
+        stringBuilder.append(" ]");
 
         return stringBuilder.toString();
     }

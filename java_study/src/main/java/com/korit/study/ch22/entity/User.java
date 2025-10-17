@@ -1,4 +1,4 @@
-package main.java.com.korit.study.ch22.entity;
+package com.korit.study.ch22.entity;
 
 public class User {
     private int id;

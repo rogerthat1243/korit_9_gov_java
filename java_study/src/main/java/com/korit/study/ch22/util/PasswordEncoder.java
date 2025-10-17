@@ -1,4 +1,4 @@
-package main.java.com.korit.study.ch22.util;
+package com.korit.study.ch22.util;
 
 import java.util.Objects;
 
@@ -7,19 +7,18 @@ public class PasswordEncoder {
     private static final String secrete = "암호화비밀번호";
 
     public static String encode(String str) {
+        if (Objects.isNull(str)) {
+            return null;
+        }
         long hash = Integer.toUnsignedLong(Objects.hash(str));
-        long encodeHash = hash + Objects.hash(secrete);
-        return Long.toHexString(encodeHash);
+        long encodedHash = hash + Objects.hash(secrete);
+        return Long.toHexString(encodedHash);
     }
 
-    public boolean match(String str, String encodeStr) {
-        if (Objects.isNull(str) || Objects.isNull(encodeStr)) {
+    public static boolean match(String 평문, String 암호문) {
+        if (Objects.isNull(평문) || Objects.isNull(암호문)) {
             return false;
         }
-        return encode(str).equals(encodeStr);
+        return encode(평문).equals(암호문);
     }
-
-//    public boolean isMatch(String str, String encodeStr) {
-//        return encode(str).equals(encodeStr);
-//    }
 }

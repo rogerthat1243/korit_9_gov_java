@@ -1,9 +1,10 @@
-package main.java.com.korit.study.ch22.service;
+package com.korit.study.ch22.service;
 
-import main.java.com.korit.study.ch22.dto.SignupDto;
-import main.java.com.korit.study.ch22.repository.UserRepository;
-import main.java.com.korit.study.ch22.entity.User;
-import main.java.com.korit.study.ch22.util.PasswordEncoder;
+import com.korit.study.ch21.Singleton;
+import com.korit.study.ch22.dto.SignupDto;
+import com.korit.study.ch22.entity.User;
+import com.korit.study.ch22.repository.UserRepository;
+import com.korit.study.ch22.util.PasswordEncoder;
 
 import java.util.Objects;
 
@@ -36,7 +37,7 @@ public class SignupService {
     }
 
     public boolean isValidConfirmPassword(String password, String confirmPassword) {
-        if (Objects.isNull(password) || Objects.isNull(confirmPassword)){
+        if (Objects.isNull(password) || Objects.isNull(confirmPassword)) {
             return false;
         }
         return password.equals(confirmPassword);
@@ -47,3 +48,13 @@ public class SignupService {
         userRepository.insert(signupDto.toUser());
     }
 }
+
+
+
+
+
+
+
+
+
+
