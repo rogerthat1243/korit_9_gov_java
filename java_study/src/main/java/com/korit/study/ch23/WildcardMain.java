@@ -40,7 +40,6 @@ public class WildcardMain {
         names.add("김준일");
         names.add("김준이");
         names.add("김준삼");
-        main.printAll(names);
 
         ArrayList<User> users = new ArrayList<>();
         users.add(new User("test1", "1234"));
