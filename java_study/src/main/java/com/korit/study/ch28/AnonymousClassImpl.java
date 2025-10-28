@@ -1,9 +1,10 @@
 package main.java.com.korit.study.ch28;
 
 public class AnonymousClassImpl implements AnonymousClass {
+
     @Override
     public void fx1() {
-        System.out.println("fx1 호출");
+//        System.out.println(num);
     }
 
     @Override
